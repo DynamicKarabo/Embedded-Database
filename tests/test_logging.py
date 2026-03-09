@@ -56,3 +56,4 @@ if __name__ == "__main__":
 # Commit 21: feat: Add crash recovery from WAL on startup
 # Commit 29: docs: Update prd.md with new features
 # Commit 37: docs: Add architecture diagram to README.md
+# Commit 45: feat: Implement graceful shutdown mechanism
