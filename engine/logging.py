@@ -74,3 +74,4 @@ class WALManager:
 # Commit 1: docs: Add prd.md with core requirements
 # Commit 9: feat: Add CRC32 integrity check to WAL entries
 # Commit 17: feat: Integrate StorageEngine and WALManager in Database
+# Commit 25: docs: Add README.md with project overview
