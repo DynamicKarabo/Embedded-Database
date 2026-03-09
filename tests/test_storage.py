@@ -59,3 +59,4 @@ if __name__ == "__main__":
     unittest.main()
 # Commit 4: test: Initial unit tests for storage engine
 # Commit 12: refactor: Optimize record packing in WALManager
+# Commit 20: feat: Add index rebuilding from storage on startup
