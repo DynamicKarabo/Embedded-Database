@@ -27,3 +27,4 @@ if __name__ == "__main__":
 # Commit 14: feat: Add IndexManager for in-memory key-to-offset mapping
 # Commit 22: test: Integration tests for end-to-end database operations
 # Commit 30: feat: Add soft-delete functionality using the index
+# Commit 38: feat: Add support for custom record headers (optional)
