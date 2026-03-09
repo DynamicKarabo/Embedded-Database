@@ -57,3 +57,4 @@ if __name__ == "__main__":
 # History 17: refactor: Update IndexManager.delete to use binary search
 # History 23: refactor: Standardize record header format across engine
 # History 29: test: Verify data integrity after compaction
+# History 35: test: Edge case tests for empty range queries
