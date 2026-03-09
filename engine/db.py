@@ -150,3 +150,4 @@ class Database:
 # Final touch
 # History 3: fix: Handle record header unpacking with new 12-byte header
 # History 9: feat: Initial implementation of storage compaction
+# History 15: feat: Switch IndexManager to sorted list using bisect
