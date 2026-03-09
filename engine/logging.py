@@ -72,3 +72,4 @@ class WALManager:
             self.file.close()
             self.file = None
 # Commit 1: docs: Add prd.md with core requirements
+# Commit 9: feat: Add CRC32 integrity check to WAL entries
