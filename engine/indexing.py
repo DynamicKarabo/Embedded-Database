@@ -23,3 +23,4 @@ class IndexManager:
     @property
     def size(self) -> int:
         return len(self._index)
+# Commit 2: feat: Implement base StorageEngine structure
