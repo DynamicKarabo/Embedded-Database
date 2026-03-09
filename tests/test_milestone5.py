@@ -65,3 +65,4 @@ if __name__ == "__main__":
 # History 22: test: Test range queries with mixed deletions
 # History 28: feat: Add basic logging for compaction starts/stops
 # History 34: chore: Clean up temporary compaction files on failure
+# History 40: docs: Update README with range query examples
