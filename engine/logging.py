@@ -79,3 +79,4 @@ class WALManager:
 # Commit 41: feat: Add logging for database operations
 # Commit 49: feat: Add support for key prefix searches
 # Commit 57: feat: Add command-line tool for basic DB operations
+# Commit 65: fix: Final polish for v1.0.0 release
