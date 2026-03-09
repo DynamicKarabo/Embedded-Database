@@ -58,3 +58,4 @@ if __name__ == "__main__":
 # Commit 37: docs: Add architecture diagram to README.md
 # Commit 45: feat: Implement graceful shutdown mechanism
 # Commit 53: fix: Bug where file isn't closed properly on exit
+# Commit 61: docs: Update API documentation
