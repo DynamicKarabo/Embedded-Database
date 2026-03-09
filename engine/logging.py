@@ -90,3 +90,4 @@ class WALManager:
 # History 7: feat: Implement durable delete() in Database using tombstones
 # History 13: docs: Document Bitcask-style compaction mechanism
 # History 19: test: Comprehensive tests for range queries
+# History 25: style: Type hinting improvements in indexing.py
