@@ -91,3 +91,4 @@ class WALManager:
 # History 13: docs: Document Bitcask-style compaction mechanism
 # History 19: test: Comprehensive tests for range queries
 # History 25: style: Type hinting improvements in indexing.py
+# History 31: fix: Correct CRC calculation for tombstone records
