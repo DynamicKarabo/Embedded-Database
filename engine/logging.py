@@ -71,3 +71,4 @@ class WALManager:
         if self.file:
             self.file.close()
             self.file = None
+# Commit 1: docs: Add prd.md with core requirements
