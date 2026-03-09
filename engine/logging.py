@@ -76,3 +76,4 @@ class WALManager:
 # Commit 17: feat: Integrate StorageEngine and WALManager in Database
 # Commit 25: docs: Add README.md with project overview
 # Commit 33: style: Linting and formatting improvements
+# Commit 41: feat: Add logging for database operations
