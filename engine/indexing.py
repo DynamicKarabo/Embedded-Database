@@ -55,3 +55,4 @@ class IndexManager:
 # Commit 58: fix: Issue with record recovery when header is partially written
 # Commit 66: release: Version 1.0.0
 # History 2: feat: Add CRC32 verification to StorageEngine.read
+# History 8: test: Integration test for deletion durability across restarts
