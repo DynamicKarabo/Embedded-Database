@@ -23,3 +23,4 @@ class TestIndexManager(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+# Commit 6: refactor: Move header size to a constant in StorageEngine
