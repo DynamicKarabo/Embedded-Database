@@ -64,3 +64,4 @@ class StorageEngine:
 # Commit 16: feat: Implement basic Query Interface in Database class
 # Commit 24: test: Fix failing persistence tests (improved teardown)
 # Commit 32: refactor: Use constant for WAL header size
+# Commit 40: test: Fix intermittent test failures in CI
