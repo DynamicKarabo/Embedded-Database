@@ -60,3 +60,4 @@ class TestMilestone5(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 # History 4: test: Unit tests for tombstone serialization
+# History 10: refactor: Extract file swapping logic in Database.compact()
