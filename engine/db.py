@@ -96,3 +96,4 @@ class Database:
 # Commit 11: fix: Ensure WAL logs are flushed and synced to disk
 # Commit 19: fix: Ensure directories are created on initialization
 # Commit 27: ci: Add initial CI workflow for running tests
+# Commit 35: test: Add stress test with 1000 records
