@@ -53,3 +53,4 @@ class TestMilestone6(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 # History 5: feat: Support tombstone recovery in WALManager
+# History 11: fix: Ensure old storage is closed before file replacement
