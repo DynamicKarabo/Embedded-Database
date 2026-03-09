@@ -91,3 +91,4 @@ class StorageEngine:
 # History 12: test: Add compaction stress test with 100 duplicate updates
 # History 18: feat: Implement get_range in Database class
 # History 24: fix: NameError in logging.py (missing Optional)
+# History 30: refactor: Use IndexManager.keys() for safe iteration in compact()
