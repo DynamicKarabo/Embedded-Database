@@ -99,3 +99,4 @@ class Database:
 # Commit 35: test: Add stress test with 1000 records
 # Commit 43: docs: Document WAL format in logging.py
 # Commit 51: docs: Add contribution guidelines
+# Commit 59: test: Add unit tests for command-line interface
