@@ -90,3 +90,4 @@ class StorageEngine:
 # History 6: refactor: Update Database._rebuild_index_from_storage to handle deleted keys
 # History 12: test: Add compaction stress test with 100 duplicate updates
 # History 18: feat: Implement get_range in Database class
+# History 24: fix: NameError in logging.py (missing Optional)
