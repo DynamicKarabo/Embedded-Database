@@ -51,3 +51,4 @@ if __name__ == "__main__":
     unittest.main()
 # Commit 7: docs: Add docstrings to StorageEngine methods
 # Commit 15: test: Unit tests for IndexManager
+# Commit 23: fix: NameError in Database class (missing struct import)
