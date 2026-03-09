@@ -49,3 +49,4 @@ class TestDatabase(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+# Commit 7: docs: Add docstrings to StorageEngine methods
