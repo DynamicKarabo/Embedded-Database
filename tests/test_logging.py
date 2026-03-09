@@ -52,3 +52,4 @@ class TestWALManager(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 # Commit 5: fix: Handle empty data read in storage.py
+# Commit 13: feat: Implement WAL recovery mechanism
