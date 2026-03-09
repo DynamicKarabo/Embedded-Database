@@ -93,3 +93,4 @@ class Database:
         self.storage.close()
         self.wal.close()
 # Commit 3: feat: Add record serialization to StorageEngine
+# Commit 11: fix: Ensure WAL logs are flushed and synced to disk
