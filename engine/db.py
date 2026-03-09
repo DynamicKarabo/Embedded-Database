@@ -92,3 +92,4 @@ class Database:
     def close(self):
         self.storage.close()
         self.wal.close()
+# Commit 3: feat: Add record serialization to StorageEngine
