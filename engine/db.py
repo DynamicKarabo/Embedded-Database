@@ -1,6 +1,6 @@
 import os
 import struct
-from typing import Optional
+from typing import Optional, List, Tuple
 from engine.storage import StorageEngine
 from engine.logging import WALManager
 from engine.indexing import IndexManager
@@ -93,6 +93,20 @@ class Database:
         # 3. Update index
         self.index.delete(k_bytes)
 
+    def get_range(self, start_key: str, end_key: str) -> List[Tuple[str, str]]:
+        """
+        Returns all key-value pairs in the range [start_key, end_key].
+        """
+        start_bytes = start_key.encode("utf-8")
+        end_bytes = end_key.encode("utf-8")
+        
+        results = []
+        for k_bytes, offset in self.index.get_range(start_bytes, end_bytes):
+            _, v_bytes = self.storage.read(offset)
+            if v_bytes is not None:
+                results.append((k_bytes.decode("utf-8"), v_bytes.decode("utf-8")))
+        return results
+
     def compact(self):
         """
         Reclaims space by writing only live records to a new storage file.
@@ -134,3 +148,4 @@ class Database:
 # Commit 51: docs: Add contribution guidelines
 # Commit 59: test: Add unit tests for command-line interface
 # Final touch
+# History 3: fix: Handle record header unpacking with new 12-byte header
