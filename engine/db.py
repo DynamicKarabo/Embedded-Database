@@ -152,3 +152,4 @@ class Database:
 # History 9: feat: Initial implementation of storage compaction
 # History 15: feat: Switch IndexManager to sorted list using bisect
 # History 21: feat: Add support for prefix scanning using get_range
+# History 27: docs: Add Milestone 6 to implementation_plan.md
