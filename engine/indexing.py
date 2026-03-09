@@ -29,3 +29,4 @@ class IndexManager:
 # Commit 26: refactor: Clean up redundant code in db.py
 # Commit 34: fix: Ensure file pointers are handled correctly during recovery
 # Commit 42: fix: Potential memory leak in IndexManager
+# Commit 50: refactor: Improve Database class organization
