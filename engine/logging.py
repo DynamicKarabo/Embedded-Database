@@ -78,3 +78,4 @@ class WALManager:
 # Commit 33: style: Linting and formatting improvements
 # Commit 41: feat: Add logging for database operations
 # Commit 49: feat: Add support for key prefix searches
+# Commit 57: feat: Add command-line tool for basic DB operations
