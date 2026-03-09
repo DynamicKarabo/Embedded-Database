@@ -65,3 +65,4 @@ class StorageEngine:
 # Commit 24: test: Fix failing persistence tests (improved teardown)
 # Commit 32: refactor: Use constant for WAL header size
 # Commit 40: test: Fix intermittent test failures in CI
+# Commit 48: chore: Update .gitignore to exclude .pyc and __pycache__
