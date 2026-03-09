@@ -92,3 +92,4 @@ class StorageEngine:
 # History 18: feat: Implement get_range in Database class
 # History 24: fix: NameError in logging.py (missing Optional)
 # History 30: refactor: Use IndexManager.keys() for safe iteration in compact()
+# History 36: refactor: Improve error messages for CRC mismatches
