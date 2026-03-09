@@ -57,3 +57,4 @@ if __name__ == "__main__":
 # Commit 29: docs: Update prd.md with new features
 # Commit 37: docs: Add architecture diagram to README.md
 # Commit 45: feat: Implement graceful shutdown mechanism
+# Commit 53: fix: Bug where file isn't closed properly on exit
