@@ -75,3 +75,4 @@ class WALManager:
 # Commit 9: feat: Add CRC32 integrity check to WAL entries
 # Commit 17: feat: Integrate StorageEngine and WALManager in Database
 # Commit 25: docs: Add README.md with project overview
+# Commit 33: style: Linting and formatting improvements
