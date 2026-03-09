@@ -89,3 +89,4 @@ class StorageEngine:
 # History 0: feat: Define TOMBSTONE_LEN constant for durable deletes
 # History 6: refactor: Update Database._rebuild_index_from_storage to handle deleted keys
 # History 12: test: Add compaction stress test with 100 duplicate updates
+# History 18: feat: Implement get_range in Database class
