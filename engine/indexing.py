@@ -25,3 +25,4 @@ class IndexManager:
         return len(self._index)
 # Commit 2: feat: Implement base StorageEngine structure
 # Commit 10: test: Add unit tests for WALManager
+# Commit 18: feat: Integrate IndexManager in Database
