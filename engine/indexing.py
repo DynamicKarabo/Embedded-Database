@@ -30,3 +30,4 @@ class IndexManager:
 # Commit 34: fix: Ensure file pointers are handled correctly during recovery
 # Commit 42: fix: Potential memory leak in IndexManager
 # Commit 50: refactor: Improve Database class organization
+# Commit 58: fix: Issue with record recovery when header is partially written
