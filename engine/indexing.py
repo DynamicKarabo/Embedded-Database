@@ -58,3 +58,4 @@ class IndexManager:
 # History 8: test: Integration test for deletion durability across restarts
 # History 14: perf: Optimize record iteration during compaction
 # History 20: fix: Include missing typing imports (List, Tuple, Optional)
+# History 26: docs: Update walkthrough.md with compaction details
