@@ -89,3 +89,4 @@ class WALManager:
 # History 1: refactor: Update StorageEngine.append to support None/Tombstones
 # History 7: feat: Implement durable delete() in Database using tombstones
 # History 13: docs: Document Bitcask-style compaction mechanism
+# History 19: test: Comprehensive tests for range queries
