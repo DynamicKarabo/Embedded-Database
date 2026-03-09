@@ -28,3 +28,4 @@ if __name__ == "__main__":
 # Commit 22: test: Integration tests for end-to-end database operations
 # Commit 30: feat: Add soft-delete functionality using the index
 # Commit 38: feat: Add support for custom record headers (optional)
+# Commit 46: test: Add tests for crash recovery with corrupted WAL
