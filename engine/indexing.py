@@ -31,3 +31,4 @@ class IndexManager:
 # Commit 42: fix: Potential memory leak in IndexManager
 # Commit 50: refactor: Improve Database class organization
 # Commit 58: fix: Issue with record recovery when header is partially written
+# Commit 66: release: Version 1.0.0
