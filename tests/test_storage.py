@@ -61,3 +61,4 @@ if __name__ == "__main__":
 # Commit 12: refactor: Optimize record packing in WALManager
 # Commit 20: feat: Add index rebuilding from storage on startup
 # Commit 28: refactor: Improve error handling in storage.read()
+# Commit 36: perf: Optimize index lookups for high volume
