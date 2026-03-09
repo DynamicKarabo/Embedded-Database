@@ -27,12 +27,11 @@ class Database:
         offset = 0
         while True:
             try:
-                key, _ = self.storage.read(offset)
-                self.index.set(key, offset)
-                # Calculate next offset: Header (8) + len(key) + len(value)
-                # But storage.read(offset) doesn't return the lengths directly here.
-                # Let's modify storage.read to return the header info or use a helper.
-                # Actually, I'll just use the file pointer position after read.
+                key, value = self.storage.read(offset)
+                if value is None:
+                    self.index.delete(key)
+                else:
+                    self.index.set(key, offset)
                 offset = self.storage.file.tell()
             except (EOFError, struct.error):
                 break
@@ -42,12 +41,12 @@ class Database:
         Rebuilds the index and ensures storage consistency by replaying the WAL.
         """
         for key, value in self.wal.recover():
-            # In a real DB, we might want to check if the record is already in storage
-            # But for this simple implementation, we append it to storage and update index
             offset = self.storage.append(key, value)
-            self.index.set(key, offset)
+            if value is None:
+                self.index.delete(key)
+            else:
+                self.index.set(key, offset)
         
-        # After recovery, we can clear the WAL (checkpointing)
         self.wal.clear()
 
     def put(self, key: str, value: str):
@@ -81,13 +80,47 @@ class Database:
 
     def delete(self, key: str):
         """
-        Deletes a key (soft delete in this simple engine).
-        In a real engine, we'd append a tombstone record.
+        Deletes a key (durable delete via tombstone).
         """
         k_bytes = key.encode("utf-8")
+        
+        # 1. Log tombstone to WAL
+        self.wal.log(k_bytes, None)
+        
+        # 2. Append tombstone to storage
+        self.storage.append(k_bytes, None)
+        
+        # 3. Update index
         self.index.delete(k_bytes)
-        # Note: We don't remove from storage in this append-only design.
-        # A tombstone could be logged to WAL and storage for full recovery.
+
+    def compact(self):
+        """
+        Reclaims space by writing only live records to a new storage file.
+        """
+        compact_file = os.path.join(self.data_dir, "data.db.compacted")
+        new_storage = StorageEngine(compact_file)
+        new_index = IndexManager()
+        
+        # Iterate over current live keys in the index
+        for key in self.index.keys():
+            old_offset = self.index.get(key)
+            if old_offset is not None:
+                _, value = self.storage.read(old_offset)
+                if value is not None:
+                    new_offset = new_storage.append(key, value)
+                    new_index.set(key, new_offset)
+        
+        # Close current storage to allow file swap
+        self.storage.close()
+        new_storage.close()
+        
+        # Swap files
+        data_file = os.path.join(self.data_dir, "data.db")
+        os.replace(compact_file, data_file)
+        
+        # Re-open storage and update index
+        self.storage = StorageEngine(data_file)
+        self.index = new_index
 
     def close(self):
         self.storage.close()

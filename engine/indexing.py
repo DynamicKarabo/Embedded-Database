@@ -17,8 +17,8 @@ class IndexManager:
         if key in self._index:
             del self._index[key]
 
-    def clear(self):
-        self._index.clear()
+    def keys(self):
+        return list(self._index.keys())
 
     @property
     def size(self) -> int:

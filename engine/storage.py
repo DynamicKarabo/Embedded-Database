@@ -1,13 +1,15 @@
 import os
 import struct
 from typing import Tuple, Optional
+import binascii
 
 class StorageEngine:
     """
     Handles append-only storage for the database.
     Format: [key_len (4 bytes)][val_len (4 bytes)][key][value]
     """
-    HEADER_SIZE = 8  # 4 bytes for key_len, 4 bytes for val_len
+    HEADER_SIZE = 12  # 4 (CRC) + 4 (key_len) + 4 (val_len)
+    TOMBSTONE_LEN = 0xFFFFFFFF  # Special value for deleted records
 
     def __init__(self, data_file: str):
         self.data_file = data_file
@@ -25,10 +27,17 @@ class StorageEngine:
         offset = self.file.tell()
         
         key_len = len(key)
-        val_len = len(value)
-        header = struct.pack("!II", key_len, val_len)
+        if value is None:
+            val_len = self.TOMBSTONE_LEN
+            val_bytes = b""
+        else:
+            val_len = len(value)
+            val_bytes = value
+            
+        record_header_and_data = struct.pack("!II", key_len, val_len) + key + val_bytes
+        crc = binascii.crc32(record_header_and_data) & 0xffffffff
         
-        self.file.write(header + key + value)
+        self.file.write(struct.pack("!I", crc) + record_header_and_data)
         self.file.flush()
         # Ensure data is written to disk
         os.fsync(self.file.fileno())
@@ -44,11 +53,20 @@ class StorageEngine:
         if not header or len(header) < self.HEADER_SIZE:
             raise EOFError("Could not read record header")
             
-        key_len, val_len = struct.unpack("!II", header)
+        crc_actual, key_len, val_len = struct.unpack("!III", header)
         
-        data = self.file.read(key_len + val_len)
-        if len(data) < key_len + val_len:
+        read_len = key_len if val_len == self.TOMBSTONE_LEN else (key_len + val_len)
+        data = self.file.read(read_len)
+        if len(data) < read_len:
             raise EOFError("Could not read full record data")
+            
+        # Verify CRC
+        record_payload = header[4:] + data
+        if binascii.crc32(record_payload) & 0xffffffff != crc_actual:
+            raise ValueError("Storage record CRC mismatch - data corruption detected")
+            
+        if val_len == self.TOMBSTONE_LEN:
+            return data, None
             
         key = data[:key_len]
         value = data[key_len:]
