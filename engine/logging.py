@@ -92,3 +92,4 @@ class WALManager:
 # History 19: test: Comprehensive tests for range queries
 # History 25: style: Type hinting improvements in indexing.py
 # History 31: fix: Correct CRC calculation for tombstone records
+# History 37: style: Consistent docstrings in db.py
