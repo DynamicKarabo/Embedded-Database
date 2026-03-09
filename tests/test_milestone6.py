@@ -55,3 +55,4 @@ if __name__ == "__main__":
 # History 5: feat: Support tombstone recovery in WALManager
 # History 11: fix: Ensure old storage is closed before file replacement
 # History 17: refactor: Update IndexManager.delete to use binary search
+# History 23: refactor: Standardize record header format across engine
