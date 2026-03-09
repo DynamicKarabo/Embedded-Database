@@ -95,3 +95,4 @@ class Database:
 # Commit 3: feat: Add record serialization to StorageEngine
 # Commit 11: fix: Ensure WAL logs are flushed and synced to disk
 # Commit 19: fix: Ensure directories are created on initialization
+# Commit 27: ci: Add initial CI workflow for running tests
