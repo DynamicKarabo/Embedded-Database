@@ -53,3 +53,4 @@ if __name__ == "__main__":
 # Commit 15: test: Unit tests for IndexManager
 # Commit 23: fix: NameError in Database class (missing struct import)
 # Commit 31: test: Add tests for soft-delete
+# Commit 39: refactor: Extract serialization logic to a utility module
