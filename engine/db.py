@@ -154,3 +154,4 @@ class Database:
 # History 21: feat: Add support for prefix scanning using get_range
 # History 27: docs: Add Milestone 6 to implementation_plan.md
 # History 33: docs: Update storage format section in PRD
+# History 39: test: Verify WAL replay after partial compaction crash
