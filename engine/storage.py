@@ -88,3 +88,4 @@ class StorageEngine:
 # Commit 64: feat: Add support for multiple data files (sharding prep)
 # History 0: feat: Define TOMBSTONE_LEN constant for durable deletes
 # History 6: refactor: Update Database._rebuild_index_from_storage to handle deleted keys
+# History 12: test: Add compaction stress test with 100 duplicate updates
