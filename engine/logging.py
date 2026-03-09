@@ -87,3 +87,4 @@ class WALManager:
 # Commit 57: feat: Add command-line tool for basic DB operations
 # Commit 65: fix: Final polish for v1.0.0 release
 # History 1: refactor: Update StorageEngine.append to support None/Tombstones
+# History 7: feat: Implement durable delete() in Database using tombstones
