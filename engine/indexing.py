@@ -60,3 +60,4 @@ class IndexManager:
 # History 20: fix: Include missing typing imports (List, Tuple, Optional)
 # History 26: docs: Update walkthrough.md with compaction details
 # History 32: perf: Improve bisect performance for large indexes
+# History 38: feat: Add database.get_stats() for compaction metrics
