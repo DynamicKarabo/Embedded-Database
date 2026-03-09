@@ -56,3 +56,4 @@ class IndexManager:
 # Commit 66: release: Version 1.0.0
 # History 2: feat: Add CRC32 verification to StorageEngine.read
 # History 8: test: Integration test for deletion durability across restarts
+# History 14: perf: Optimize record iteration during compaction
