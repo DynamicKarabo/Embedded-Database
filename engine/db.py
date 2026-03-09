@@ -149,3 +149,4 @@ class Database:
 # Commit 59: test: Add unit tests for command-line interface
 # Final touch
 # History 3: fix: Handle record header unpacking with new 12-byte header
+# History 9: feat: Initial implementation of storage compaction
