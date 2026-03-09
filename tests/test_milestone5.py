@@ -62,3 +62,4 @@ if __name__ == "__main__":
 # History 4: test: Unit tests for tombstone serialization
 # History 10: refactor: Extract file swapping logic in Database.compact()
 # History 16: feat: Add get_range support to IndexManager
+# History 22: test: Test range queries with mixed deletions
