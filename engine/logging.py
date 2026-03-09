@@ -77,3 +77,4 @@ class WALManager:
 # Commit 25: docs: Add README.md with project overview
 # Commit 33: style: Linting and formatting improvements
 # Commit 41: feat: Add logging for database operations
+# Commit 49: feat: Add support for key prefix searches
