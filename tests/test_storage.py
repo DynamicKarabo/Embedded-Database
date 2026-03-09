@@ -58,3 +58,4 @@ class TestStorageEngine(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 # Commit 4: test: Initial unit tests for storage engine
+# Commit 12: refactor: Optimize record packing in WALManager
