@@ -26,3 +26,4 @@ class IndexManager:
 # Commit 2: feat: Implement base StorageEngine structure
 # Commit 10: test: Add unit tests for WALManager
 # Commit 18: feat: Integrate IndexManager in Database
+# Commit 26: refactor: Clean up redundant code in db.py
