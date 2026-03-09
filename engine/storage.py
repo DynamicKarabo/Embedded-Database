@@ -93,3 +93,4 @@ class StorageEngine:
 # History 24: fix: NameError in logging.py (missing Optional)
 # History 30: refactor: Use IndexManager.keys() for safe iteration in compact()
 # History 36: refactor: Improve error messages for CRC mismatches
+# History 42: release: Version 1.1.0 (Compaction & Range Queries)
