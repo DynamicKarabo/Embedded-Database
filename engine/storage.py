@@ -61,3 +61,4 @@ class StorageEngine:
             self.file = None
 # Commit 0: init: Initial project setup
 # Commit 8: feat: Implement WALManager core logging logic
+# Commit 16: feat: Implement basic Query Interface in Database class
